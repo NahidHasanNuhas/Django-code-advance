@@ -1,0 +1,13 @@
+{% extends "GitApp/base.html" %}
+{% load static %}
+
+{% block picture %}
+	<img src="{% static 'Images/Login.png' %}" alt="#Login" height="20px">
+{% endblock picture %}
+
+{% block contents %}
+	<div style="background-color: #f1f1f1; padding:50px; margin-top:20px;">
+		<h1 style="text-align:center;">WELCOME {{ UserName }}!</h1>
+		<h2 style="text-align:center;">You are successfully logged in</h2>
+	</div>
+{% endblock contents %}

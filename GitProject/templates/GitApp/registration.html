@@ -1,0 +1,36 @@
+{% extends 'GitApp/base.html' %}
+{% load static %}
+
+{% block picture %}
+	<img src="{% static 'Images/register.png' %}" alt="#Register" height="20px">
+{% endblock picture %}
+
+{% block contents %}
+	
+	<div class="register-page" style="background-color: #f1f1f1">
+		{% if registered %}
+			<h1 style="text-align:center; padding: 100px;">Successfully registered!!!</h1>
+		{% else %}
+
+			<div style="padding: 20px 50px 50px 0px;">
+				
+				<h1 style="text-align:center;">Please Register Here</h1>
+				<h3 style="text-align:center;">Fill out the form below:</h3>
+
+				<div style="width:'30%'; margin-left:30%; margin-right:30%; font-family:'Courier New';">
+					<form enctype="multipart/form-data" method="post">
+						{% csrf_token %}
+
+						{{ UserForm.as_p }}
+						{{ ProfileForm.as_p }}
+						
+						<input type="submit" value="Register">
+					</form>
+				</div>
+
+			</div>
+
+		{% endif %}
+	</div>
+
+{% endblock contents %}

@@ -1,0 +1,32 @@
+body {
+	font-family:  monospace, 'Courier New', Courier;
+}
+.navigation-list {
+	background-color: #40b0fa;
+	padding: 20px;
+}
+#navigation-list {
+	list-style-type: none;
+	display: inline;
+	font-size: 25px;
+}
+.navigation-bar {
+	display: inline;
+}
+.link-a {
+	text-decoration: none;
+	color: #fff;
+	padding: 20px;
+}
+.link-a:hover {
+	background-color: #fff;
+	color: #40b0fa;
+	transition-duration: 0.2s;
+}
+.index-home {
+	text-align: center;
+	background-color: #f1f1f1;
+}
+.index-home > h1 {
+	padding: 100px;
+}

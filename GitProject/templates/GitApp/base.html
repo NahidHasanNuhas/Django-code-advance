@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{% static 'CSS_Styles/BaseStyle.css' %}">
+</head>
+<body>
+	<nav>
+		<div class="navigation-list">
+			<ul id="navigation-list">
+				<li class='navigation-bar'>
+					{% block picture %}
+						<!-- Insert Pictures -->
+					{% endblock picture %}
+				</li>
+				<li class='navigation-bar'><a href="{% url 'index' %}" class="link-a">Index</a></li>
+				<li class='navigation-bar'><a href="{% url 'admin:index' %}" class="link-a">Admin</a></li>
+				<li class='navigation-bar'><a href="{% url 'GitApp:register' %}" class="link-a">Register</a></li>
+
+				{% if user.is_authenticated %}
+					<li class='navigation-bar'><a href="{% url 'logout' %}" class="link-a">Logout</a></li>
+				{% else %}
+					<li class='navigation-bar'><a href="{% url 'GitApp:UserLogin' %}" class="link-a">Login</a></li>  
+				{% endif %}
+			</ul>
+		</div>
+	</nav>
+
+	{% block contents %}
+		<!-- Texts to be replaced -->
+	{% endblock contents %}
+</body>
+</html>

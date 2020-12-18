@@ -1,0 +1,29 @@
+{% extends "GitApp/base.html" %}
+{% load static %}
+
+{% block picture %}
+	<img src="{% static 'Images/Login.png' %}" alt="#Login" height="20px">
+{% endblock picture %}
+
+{% block contents %}
+	
+	<div style="background-color: #f1f1f1;">
+		<h1 style="text-align:center; padding-top: 20px;">Login here</h1>
+		
+		<div style="margin-left:40%; margin-right:40%; padding: 0px 0px 50px 0px;">
+			<form method="post">
+				{% csrf_token %}
+
+				<label for="username">Username:</label>
+				<input type="text" name="username" id="username" placeholder="Username"><br><br>
+
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" placeholder="Password"><br><br>
+
+				<input type="submit" value="Login" style="margin-left:50%; transform:translateX(-50%)">
+			</form>
+		</div>
+
+	</div>
+
+{% endblock contents %}
